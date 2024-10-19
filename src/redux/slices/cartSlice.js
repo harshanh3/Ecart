@@ -21,14 +21,14 @@ const cartSlice = createSlice({
             return state.filter(item=>item.id!=dataFromCart.payload)
         },
         incQuantity :(state,actionFromCart)=>{
-            const existingProduct = state.find(item=>item.id==actionFromCart.payload)
+            const existingProduct = state.find(item=>item.id==actionFromCart.payload.id)
             existingProduct.quantity ++
             existingProduct.totalPrice = existingProduct.quantity * existingProduct.price
             const remainingProduct = state.filter(item=>item.id!=actionFromCart.payload.id)
             state = [...remainingProduct,existingProduct]
         },
         decQuantity:(state,actionFromCart)=>{
-            const existingProduct = state.find(item=>item.id==actionFromCart.payload)
+            const existingProduct = state.find(item=>item.id==actionFromCart.payload.id)
             existingProduct.quantity --
             existingProduct.totalPrice = existingProduct.quantity * existingProduct.price
             const remainingProduct = state.filter(item=>item.id!=actionFromCart.payload.id)

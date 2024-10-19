@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import Header from '../components/Header'
-import { Link, Navigate, useNavigate } from 'react-router-dom'
+import { Link, Navigate,  } from 'react-router-dom'
 import { useDispatch, useSelector, } from 'react-redux'
 import { decQuantity,emptyCart,incQuantity, removeCartItem } from '../redux/slices/cartSlice'
 
 
 const Cart = () => {
-  const navigate = useNavigate()
+  const navigate = Navigate
   const dispatch = useDispatch()
   const userCart = useSelector(state => state.CartReducer)
   const [carttotal, setCartTotal] = useState(0)
@@ -65,7 +65,7 @@ navigate('/')
                               <div className='flex'>
                                 <button onClick={()=>handledecrementQuantity(product)} className='font-bold'>-</button>
                                 <input style={{ width: '40px' }} type="text" value={product?.quantity} className='border p-1 rounded ms-2 me-2' readOnly />
-                                <button onClick={()=>dispatch( incQuantity(product))} className='font-bold'>+</button>
+                                <button onClick={()=>dispatch(incQuantity(product))} className='font-bold'>+</button>
 
                               </div>
                             </td>
