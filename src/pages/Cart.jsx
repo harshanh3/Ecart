@@ -75,7 +75,7 @@ navigate('/')
                     </tbody>
                   </table>
                   <div className='float-right mt-4'>
-                    <button onClick={()=>dispatch(emptyCart)} className='bg-red-500 text-white p-2 rounded me-3'>EMPTY CART</button>
+                    <button onClick={()=>dispatch(emptyCart())} className='bg-red-500 text-white p-2 rounded me-3'>EMPTY CART</button>
                     <Link className='bg-blue-500 text-white p-2 rounded me-3' to={'/'}>SHOP MORE</Link>
                   </div>
                 </div>
